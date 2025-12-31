@@ -1,0 +1,349 @@
+/* ===========================================================================
+   ALLOTMENT CHECKER COMPONENT STYLES
+   =========================================================================== */
+
+.checker {
+    background: linear-gradient(145deg, #1a1a1a 0%, #111111 100%);
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.checkerHeader {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.checkerTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.checkerSubtitle {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Form Styles */
+.checkerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-weight: 500;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.select,
+.input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.select:focus,
+.input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.select option {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.input::placeholder {
+    color: #666;
+}
+
+.hint {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Method Selector */
+.methodSelector {
+    display: flex;
+    gap: 8px;
+    background: #1e1e1e;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.methodBtn {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #a0a0a0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.methodBtn:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.methodBtn.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #fff;
+}
+
+/* Submit Button */
+.submitBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: inherit;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+}
+
+.submitBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(59, 130, 246, 0.45);
+}
+
+.submitBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Privacy Notice */
+.privacyNotice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 8px;
+}
+
+.lockIcon {
+    font-size: 1rem;
+}
+
+/* Error Box */
+.errorBox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 10px;
+    color: #f87171;
+    font-size: 0.9rem;
+}
+
+.errorIcon {
+    flex-shrink: 0;
+}
+
+/* Result Container */
+.resultContainer {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resultHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.resultHeader.success {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #10b981;
+}
+
+.resultHeader.notAllotted {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+.resultIcon {
+    font-size: 1.5rem;
+}
+
+.resultStatus {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.resultBody {
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.resultRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.resultRow:last-child {
+    border-bottom: none;
+}
+
+.resultLabel {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+.resultValue {
+    color: #fff;
+    font-weight: 500;
+    text-align: right;
+}
+
+.resultFooter {
+    display: flex;
+    justify-content: center;
+}
+
+.checkAnotherBtn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: inherit;
+    background: transparent;
+    border: 1px solid #3b82f6;
+    border-radius: 10px;
+    color: #3b82f6;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checkAnotherBtn:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Refund Info */
+.refundInfo {
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.refundInfo h4 {
+    color: #f59e0b;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.refundInfo p {
+    color: #a0a0a0;
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .checker {
+        padding: 20px;
+        border-radius: 16px;
+        margin: 0 12px;
+    }
+
+    .checkerTitle {
+        font-size: 1.25rem;
+    }
+
+    .methodSelector {
+        flex-direction: column;
+    }
+
+    .methodBtn {
+        padding: 12px;
+    }
+
+    .submitBtn {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+}
