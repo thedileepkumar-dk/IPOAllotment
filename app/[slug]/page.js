@@ -48,23 +48,7 @@ export async function generateMetadata({ params }) {
     };
 }
 
-/**
- * Generate static paths for all IPOs and Static Pages
- */
-export async function generateStaticParams() {
-    const [ipos, pages] = await Promise.all([
-        prisma.iPO.findMany({ select: { slug: true } }),
-        prisma.page.findMany({
-            where: { status: 'published' },
-            select: { slug: true }
-        })
-    ]);
-
-    const ipoParams = ipos.map(ipo => ({ slug: ipo.slug }));
-    const pageParams = pages.map(page => ({ slug: page.slug }));
-
-    return [...ipoParams, ...pageParams];
-}
+export const dynamic = 'force-dynamic';
 
 /**
  * Dynamic Page Component (Handles both IPOs and Static Content)
